@@ -1,19 +1,18 @@
 import "./BlogList.css";
 import { Link } from "react-router-dom";
+import { useTheme } from "../../Hooks/useTheme";
 
 export default function BlogList({ blogs }) {
+  const { mode } = useTheme();
+
   if (blogs.length === 0) {
-    return (
-      <div className="blog-list">
-        <h2 className="page-title">No articles found</h2>
-      </div>
-    );
+    return <h2 className="error">No articles found</h2>;
   }
 
   return (
     <div className="blog-list">
       {blogs.map((blog) => (
-        <div key={blog.id} className="card">
+        <div key={blog.id} className={`card ${mode}`}>
           <h3>{blog.title}</h3>
           <p>{blog.readTime}</p>
           <div>{blog.content.substring(0, 100)} ...</div>

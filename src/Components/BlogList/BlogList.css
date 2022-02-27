@@ -43,3 +43,12 @@
   border-radius: 4px;
   margin: 20px auto 0;
 }
+
+.blog-list .card.dark {
+  background: #555;
+}
+.blog-list .card.dark p,
+.blog-list .card.dark h3,
+.blog-list .card.dark div {
+  color: #e4e4e4;
+}

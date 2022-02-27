@@ -3,7 +3,7 @@ import "./Blog.css";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../../Hooks/useFetch";
 
-import React from "react";
+import { useTheme } from "../../Hooks/useTheme";
 
 function Blog() {
   const { id } = useParams();
@@ -11,8 +11,10 @@ function Blog() {
 
   const { data: blog, loading, error } = useFetch(url);
 
+  const { mode } = useTheme();
+
   return (
-    <div className="blog">
+    <div className={`blog ${mode}`}>
       {loading && <p className="loading">Loading...</p>}
       {error && <p className="error">{error}</p>}
       {blog && (
