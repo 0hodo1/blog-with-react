@@ -7,13 +7,13 @@ export const useFetch = (url, method = "GET") => {
 
   const [options, setOptions] = useState(null);
 
-  const postData = (data) => {
+  const postData = (postData) => {
     setOptions({
       method: "POST",
-      body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
       },
+      body: JSON.stringify(postData),
     });
   };
 
@@ -47,8 +47,7 @@ export const useFetch = (url, method = "GET") => {
     if (method === "GET") {
       fetchData();
     }
-
-    if (method === "POST") {
+    if (method === "POST" && options) {
       fetchData(options);
     }
 

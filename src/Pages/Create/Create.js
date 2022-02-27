@@ -24,7 +24,7 @@ function Create() {
     e.preventDefault();
     console.log(title, content, readTime, categories);
 
-    postData({ title, categories, content, readTime });
+    postData({ title, categories, content, readTime: readTime + " dakika" });
   };
 
   const handleAdd = (e) => {
@@ -41,7 +41,7 @@ function Create() {
     if (data) {
       history.push("/");
     }
-  }, [data]);
+  }, [data, history]);
 
   return (
     <div className="create">
