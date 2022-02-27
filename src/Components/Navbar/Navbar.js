@@ -4,9 +4,12 @@ import "./Navbar.css";
 import React from "react";
 import SearchBar from "../SearchBar/SearchBar";
 
+import { useTheme } from "../../Hooks/useTheme";
+
 function Navbar() {
+  const { bgColor } = useTheme();
   return (
-    <div className="navbar">
+    <div className="navbar" style={{ backgroundColor: bgColor }}>
       <nav>
         <Link to="/" className="brand">
           <h1>Hodo Blog</h1>
