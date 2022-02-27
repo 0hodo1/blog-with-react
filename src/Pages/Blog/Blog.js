@@ -17,14 +17,14 @@ function Blog() {
       {error && <p className="error">{error}</p>}
       {blog && (
         <>
-          <h2 className="page-title">{blog.baslik}</h2>
-          <p className="time">{blog.okunmaSuresi} okunma süresi</p>
+          <h2 className="page-title">{blog.title}</h2>
+          <p className="time">{blog.readTime} okunma süresi</p>
           <ul>
-            {blog.kategoriler.map((kat) => (
+            {blog.categories.map((kat) => (
               <li key={kat}>{kat}</li>
             ))}
           </ul>
-          <p className="info">{blog.icerik}</p>
+          <p className="info">{blog.content}</p>
         </>
       )}
     </div>
